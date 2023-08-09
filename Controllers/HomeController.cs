@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PlantNest.Models;
+﻿using PlantNest.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace PlantNest.Controllers
@@ -28,5 +28,7 @@ namespace PlantNest.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }

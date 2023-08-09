@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PlantNest.props" />
+</Project>
