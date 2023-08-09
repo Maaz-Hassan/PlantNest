@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MCy4ZhihuOklZqO7D/xhiQCkpI9OXYipArhwCsYych8=",
+  "Hash": "2FCVfIK7+G0BJriWS1qdOmGqQFaARsto0WHrNvr/2MY=",
   "Source": "PlantNest",
   "BasePath": "_content/PlantNest",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Software Engineering\\Competitions Aptech\\Techwiz 4\\PlantNest\\PlantNest\\wwwroot\\Images\\background.jpg",
+      "SourceId": "PlantNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Software Engineering\\Competitions Aptech\\Techwiz 4\\PlantNest\\PlantNest\\wwwroot\\",
+      "BasePath": "_content/PlantNest",
+      "RelativePath": "Images/background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\background.jpg"
     },
     {
       "Identity": "D:\\Software Engineering\\Competitions Aptech\\Techwiz 4\\PlantNest\\PlantNest\\wwwroot\\js\\site.js",

@@ -4,11 +4,71 @@
 }
 
 <link href="/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+
+    body {
+        background-image: url('../Images/background.jpg');
+    }
+
+    .login {
+        margin-top: 10%;
+        margin-bottom: auto;
+    }
+
+    form {
+        /*border: 3px solid #f1f1f1;*/
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: saturate(100%) blur(5px);
+        padding: 40px;
+        color: #fff;
+        border-radius:10px;
+    }
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: green;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .heading {
+        color: #fff;
+    }
+
+    .msg {
+        padding: 0px;
+    }
+
+
+    .err {
+        color: red;
+    }
+</style>
 @Html.ValidationSummary()
 <div class="container">
     <div class="row">
-        <div class="col-md-6 center-block">
-            <h3>Registration</h3>
+        <div class="center-block">
+            <h3 class="text-center text-uppercase heading">Registration</h3>
             <form asp-action="Registration" method="post">
                 <div class="form-group">
                     <label>FName*</label>
@@ -60,7 +120,7 @@
                 }
 
                 <button type="submit" class="btn btn-info">Registration</button>
-                <a class="btn btn-primary" href="/UserAuthentication/Login">Login</a>
+                <a class="text-alert" href="/UserAuthentication/Login">Already Registered? Login</a>
             </form>
         </div>
     </div>

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\PlantNest.bundle.scp.css"
     },
     {
+      "Id": "D:\\Software Engineering\\Competitions Aptech\\Techwiz 4\\PlantNest\\PlantNest\\wwwroot\\Images\\background.jpg",
+      "PackagePath": "staticwebassets\\Images\\background.jpg"
+    },
+    {
       "Id": "D:\\Software Engineering\\Competitions Aptech\\Techwiz 4\\PlantNest\\PlantNest\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
