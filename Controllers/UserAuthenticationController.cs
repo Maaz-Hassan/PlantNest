@@ -2,41 +2,67 @@
 using PlantNest.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using PlantNest.Models.Domain;
 
 namespace PlantNest.Controllers
 {
     public class UserAuthenticationController : Controller
     {
         private readonly IUserAuthenticationService _authService;
-        public UserAuthenticationController(IUserAuthenticationService authService)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public UserAuthenticationController(
+            IUserAuthenticationService authService,
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager)
         {
             this._authService = authService;
+            this._signInManager = signInManager;
+            this._userManager = userManager;
         }
 
-        
+
         public IActionResult Login()
         {
             return View();
         }
 
-       
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                var user = await _authService.LoginAsync(model);
+
+                if (user != null)
+                {
+                    var user1 = await _userManager.FindByNameAsync(model.Username);
+                    var result = await _signInManager.CheckPasswordSignInAsync(user1, model.Password, lockoutOnFailure: false);
+
+                    if (result.Succeeded)
+                    {
+                        if (await _userManager.IsInRoleAsync(user1, "admin"))
+                        {
+                            return RedirectToAction("Display", "Admin");
+                        }
+                        else if (await _userManager.IsInRoleAsync(user1, "user"))
+                        {
+                            return RedirectToAction("Display", "Dashboard");
+                        }
+                    }
+                }
+
+
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return View(model);
-            var result = await _authService.LoginAsync(model);
-            if(result.StatusCode==1)
-            {
-                return RedirectToAction("Display", "Dashboard");
             }
-            else
-            {
-                TempData["msg"] = result.Message;
-                return RedirectToAction(nameof(Login));
-            }
+
+            return View(model);
         }
-       
+
+
         public IActionResult Registration()
         {
             return View();

@@ -8,6 +8,7 @@ namespace PlantNest.Controllers
     {
         public IActionResult Display()
         {
+            Console.WriteLine(User.IsInRole("admin"));
             return View();
         }
     }

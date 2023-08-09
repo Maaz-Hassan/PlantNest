@@ -1,7 +1,9 @@
 ﻿@{
     string username = User.Identity.Name;
+    Layout = null;
 }
 <div>
    
     welcome @username
 </div>
+<a href="@Url.Action("Logout","UserAuthentication")">Logout</a>
